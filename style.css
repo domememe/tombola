@@ -16,14 +16,13 @@ h2, button{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
 }
-td:nth-child(5){
-    border-right: 4px solid black;
-}
-
 /* Righe 2, 4, 6, 8 tutte */
 tr:nth-child(0) td,
 tr:nth-child(3) td,
-tr:nth-child(6) td {
+tr:nth-child(6) td,
+tr:nth-child(9) td,
+tr:nth-child(12) td,
+tr:nth-child(15) td {
     border-bottom: 4px solid black;
 }
 .nestratto{
