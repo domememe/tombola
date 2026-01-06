@@ -11,7 +11,6 @@
     for (let i = 1; i <= 90; i++){
         numeroestratto.push(i);
     }    
-    let righe = [];
 function generacartelle(){
     document.getElementById("generacartelle").disabled= true;
     let div = document.getElementById("div");
