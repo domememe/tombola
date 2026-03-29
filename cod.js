@@ -58,26 +58,31 @@ function estrainumero() {
 function controllaVincite(tr) {
     let conto = parseInt(tr.dataset.usciti);
     let p = document.getElementById("risultati");
-    if (tr.dataset.premio !== "no") return; // questa riga fa in modo che una stessa riga non faccia ambo, terno ...
+    let tutteLeRighe = Array.from(document.querySelectorAll("tr"));
+    let indice = tutteLeRighe.indexOf(tr);
+    let numeroCartella = Math.floor(indice / 3) + 1;
+
+    if (tr.dataset.premio !== "no") return;
+
     if (conto == 2 && !ambo) {
         ambo = true;
         tr.dataset.premio = "ambo";
-        p.innerHTML += "Ambo con i numeri: " + tr.dataset.numeri + "<br>";
+        p.innerHTML += "Cartella " + numeroCartella + " ha fatto ambo con i numeri: " + tr.dataset.numeri + "<br>";
     }
     else if (conto == 3 && !terno) {
         terno = true;
         tr.dataset.premio = "terno";
-        p.innerHTML += "Terno con i numeri: " + tr.dataset.numeri + "<br>";
+        p.innerHTML += "Cartella " + numeroCartella + " ha fatto terno con i numeri: " + tr.dataset.numeri + "<br>";
     }
     else if (conto == 4 && !quaterna) {
         quaterna = true;
         tr.dataset.premio = "quaterna";
-        p.innerHTML += "Quaterna con i numeri: " + tr.dataset.numeri + "<br>";
+        p.innerHTML += "Cartella " + numeroCartella + " ha fatto quaterna con i numeri: " + tr.dataset.numeri + "<br>";
     }
     else if (conto == 5 && !cinquina) {
         cinquina = true;
         tr.dataset.premio = "cinquina";
-        p.innerHTML += "Cinquina con i numeri: " + tr.dataset.numeri + "<br>";
+        p.innerHTML += "Cartella " + numeroCartella + " ha fatto cinquina con i numeri: " + tr.dataset.numeri + "<br>";
     }
 }
 function controllaTombola() {
